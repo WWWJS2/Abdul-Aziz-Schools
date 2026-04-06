@@ -1,1245 +1,1452 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>دليل التسجيل — مدارس الملك عبدالعزيز النموذجية الأهلية</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary: #0f9d8a;
-      --primary-dark: #0b7f70;
+      --primary: #00b4d8;
+      --primary-dark: #0096c7;
+      --secondary: #4a90d9;
+      --accent: #7bc67e;
+      --accent-purple: #9b72cf;
+      --accent-yellow: #f4c430;
       --navy: #0d1f4e;
-      --navy-light: #17326f;
-      --accent: #16b5c6;
-      --bg: #f4f7fb;
-      --bg-soft: #eef4fa;
+      --navy-light: #1a336e;
+      --bg-light: #f5f7fa;
+      --bg-lighter: #fafbfc;
       --white: #ffffff;
-      --text: #182540;
-      --muted: #5e6c86;
-      --border: #dde6f2;
-      --success: #3caf73;
-      --warning: #d89b17;
-      --shadow-soft: 0 16px 40px rgba(13, 31, 78, 0.08);
-      --shadow-hover: 0 22px 50px rgba(13, 31, 78, 0.14);
-      --radius-xl: 28px;
+      --text-dark: #1e2d4e;
+      --text-muted: #5a6a85;
+      --border-light: #e0e6f2;
+      --success: #52b788;
+      --warning: #f4c430;
+      --error: #e74c3c;
+      --shadow-soft: 0 14px 40px rgba(13, 31, 78, 0.08);
+      --shadow-hover: 0 22px 60px rgba(13, 31, 78, 0.14);
+      --radius-xl: 30px;
       --radius-lg: 22px;
       --radius-md: 16px;
-      --container: 1180px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+      -webkit-text-size-adjust: 100%;
+    }
+
     body {
       font-family: 'Tajawal', sans-serif;
-      background: linear-gradient(180deg, #f4f7fb 0%, #fbfcfe 100%);
-      color: var(--text);
+      background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-lighter) 100%);
+      color: var(--text-dark);
+      direction: rtl;
+      text-align: right;
+      min-height: 100vh;
       overflow-x: hidden;
     }
-    img { display: block; max-width: 100%; height: auto; }
-    a { color: inherit; text-decoration: none; }
-    button, input, select { font-family: inherit; }
-    button { border: none; cursor: pointer; background: none; }
-    .container { width: min(var(--container), calc(100% - 32px)); margin-inline: auto; }
-    .ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
+
+    a, button, input, textarea, select {
+      font-family: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a, button {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
 
     .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: linear-gradient(135deg, rgba(13,31,78,0.96), rgba(23,50,111,0.92));
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      transition: background .25s ease, box-shadow .25s ease, backdrop-filter .25s ease, padding .25s ease;
-      padding: 16px 0;
-    }
-    .site-header.scrolled {
-      backdrop-filter: blur(14px);
-      box-shadow: 0 12px 36px rgba(13,31,78,0.18);
-      background: linear-gradient(135deg, rgba(13,31,78,0.88), rgba(23,50,111,0.84));
-    }
-    .header-inner {
+      background: linear-gradient(135deg, rgba(13, 31, 78, 0.97) 0%, rgba(26, 51, 110, 0.95) 100%);
+      padding: 14px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: 0 10px 34px rgba(0, 0, 0, 0.16);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
+
     .header-brand {
       display: flex;
       align-items: center;
       gap: 14px;
+      text-align: right;
       min-width: 0;
+      flex: 1 1 320px;
+      justify-content: flex-start;
     }
+
     .header-logo {
       width: 54px;
       height: 54px;
       border-radius: 14px;
+      background: rgba(255, 255, 255, 0.12);
       padding: 7px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.18);
-      display: grid;
-      place-items: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
       flex-shrink: 0;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
     }
-    .header-logo img { object-fit: contain; width: 100%; height: 100%; border-radius: 10px; }
-    .header-copy { min-width: 0; }
+
+    .header-logo:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: scale(1.05);
+    }
+
+    .header-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+      text-align: right;
+      align-items: flex-start;
+    }
+
     .header-title {
-      color: #fff;
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 800;
-      line-height: 1.5;
-      margin-bottom: 3px;
+      color: #fff;
+      line-height: 1.45;
     }
+
     .header-subtitle {
-      color: rgba(255,255,255,0.76);
       font-size: 12px;
+      color: rgba(255, 255, 255, 0.76);
       line-height: 1.5;
     }
 
-    .btn, .chip-btn {
+    .header-btn,
+    .cta-btn,
+    .action-btn,
+    .mini-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      transition: transform .22s ease, box-shadow .22s ease, background .22s ease, border-color .22s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .btn:hover, .chip-btn:hover { transform: translateY(-2px); }
-    .btn-primary {
-      color: #fff;
-      padding: 12px 24px;
+      gap: 8px;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      box-shadow: 0 12px 28px rgba(15,157,138,0.24);
-      font-weight: 800;
+      font-weight: 700;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .header-btn,
+    .cta-btn,
+    .action-btn.primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(0, 180, 216, 0.24);
+      text-decoration: none;
+    }
+
+    .header-btn {
+      padding: 11px 20px;
       font-size: 14px;
       white-space: nowrap;
+      flex-shrink: 0;
+      min-height: 46px;
     }
-    .btn-secondary {
-      color: var(--navy);
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.92);
-      border: 1px solid rgba(255,255,255,0.28);
-      font-weight: 800;
-      font-size: 14px;
-      box-shadow: 0 10px 22px rgba(8,15,40,0.08);
+
+    .header-btn:hover,
+    .cta-btn:hover,
+    .action-btn:hover,
+    .mini-btn:hover {
+      transform: translateY(-2px);
     }
 
     .hero {
+      background: linear-gradient(160deg, var(--navy) 0%, #1c3a6e 50%, #27508a 100%);
+      padding: 100px 24px 120px;
+      text-align: center;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(160deg, var(--navy) 0%, #17326f 46%, #21488b 100%);
-      padding: 82px 0 68px;
     }
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(8px);
-      opacity: 0.65;
-      pointer-events: none;
-    }
+
     .hero::before {
-      width: 340px;
-      height: 340px;
-      inset-inline-start: -60px;
-      top: 10px;
-      background: radial-gradient(circle, rgba(22,181,198,0.30), transparent 62%);
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(0, 180, 216, 0.2) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 30%, rgba(155, 114, 207, 0.15) 0%, transparent 60%);
+      animation: gradientShift 8s ease-in-out infinite;
     }
-    .hero::after {
-      width: 420px;
-      height: 420px;
-      inset-inline-end: -90px;
-      bottom: -70px;
-      background: radial-gradient(circle, rgba(15,157,138,0.28), transparent 60%);
+
+    @keyframes gradientShift {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.82; }
     }
-    .hero-grid {
+
+    .hero-content {
       position: relative;
       z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0,1.25fr) minmax(300px,0.78fr);
-      gap: 24px;
-      align-items: stretch;
+      max-width: 860px;
+      margin: 0 auto;
     }
-    .hero-main, .hero-side {
-      border-radius: 30px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-    }
-    .hero-main {
-      padding: 28px;
-    }
-    .hero-side {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.12);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px);
       color: #fff;
-      font-size: 13px;
-      font-weight: 800;
-      border: 1px solid rgba(255,255,255,0.14);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 14px;
+      margin-bottom: 32px;
+      animation: slideDown 0.8s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h1 {
+      font-family: 'Amiri', serif;
+      font-size: clamp(32px, 6vw, 56px);
+      color: #fff;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 18px;
+      animation: slideDown 0.8s ease-out 0.1s both;
+    }
+
+    .hero p {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.8;
+      animation: slideDown 0.8s ease-out 0.2s both;
+    }
+
+    .steps-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .steps-title {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .steps-title h2 {
+      font-size: clamp(28px, 5vw, 42px);
+      color: var(--text-dark);
+      margin-bottom: 12px;
+      font-weight: 900;
+    }
+
+    .steps-title p {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .journey-shell {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(224, 230, 242, 0.95);
+      box-shadow: var(--shadow-soft);
+      border-radius: 34px;
+      padding: 24px;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .journey-shell::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(0, 180, 216, 0.08), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(155, 114, 207, 0.06), transparent 24%);
+      pointer-events: none;
+    }
+
+    .journey-topbar {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    .journey-chip {
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.12), rgba(74, 144, 217, 0.08));
+      border: 1px solid rgba(0, 180, 216, 0.15);
+      color: var(--text-dark);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .journey-progress-text {
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .stepper-nav-wrap {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 26px;
+    }
+
+    .stepper-progress {
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(224, 230, 242, 0.9);
+      overflow: hidden;
       margin-bottom: 18px;
     }
-    .hero-title {
-      font-family: 'Amiri', serif;
+
+    .stepper-progress-bar {
+      width: 20%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+      transition: width 0.35s ease;
+    }
+
+    .stepper-nav {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .step-tab {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+      border: 1px solid rgba(224, 230, 242, 0.95);
+      border-radius: 22px;
+      padding: 14px 12px;
+      min-height: 104px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+      color: var(--text-muted);
+      box-shadow: 0 8px 22px rgba(13, 31, 78, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .step-tab:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgba(13, 31, 78, 0.08);
+    }
+
+    .step-tab.active {
+      border-color: rgba(0, 180, 216, 0.3);
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(236, 249, 252, 0.95));
+      box-shadow: 0 16px 36px rgba(0, 180, 216, 0.12);
+      color: var(--text-dark);
+    }
+
+    .step-tab.done {
+      background: linear-gradient(180deg, rgba(82, 183, 136, 0.12), rgba(255, 255, 255, 0.96));
+      border-color: rgba(82, 183, 136, 0.22);
+    }
+
+    .step-tab-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(13, 31, 78, 0.05);
+      color: var(--text-dark);
+      font-weight: 900;
+      font-size: 20px;
+      transition: inherit;
+    }
+
+    .step-tab.active .step-tab-num,
+    .step-tab.done .step-tab-num {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: #fff;
-      font-size: clamp(32px, 6vw, 54px);
-      line-height: 1.25;
-      margin-bottom: 14px;
+      box-shadow: 0 12px 26px rgba(0, 180, 216, 0.18);
     }
-    .hero-desc {
-      color: rgba(255,255,255,0.88);
-      font-size: 18px;
+
+    .step-tab.done .step-tab-num {
+      background: linear-gradient(135deg, var(--accent), #2d6a4f);
+      box-shadow: 0 12px 26px rgba(82, 183, 136, 0.18);
+    }
+
+    .step-tab small {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .step-tab-title {
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 800;
+    }
+
+    .journey-stage {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.85fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .panel-box,
+    .side-box {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 252, 255, 0.96));
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(224, 230, 242, 0.95);
+      box-shadow: 0 12px 30px rgba(13, 31, 78, 0.06);
+    }
+
+    .panel-box {
+      padding: 28px;
+      min-height: 100%;
+    }
+
+    .step-panel {
+      display: none;
+      animation: fadeInUp 0.4s ease;
+    }
+
+    .step-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 18px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    .panel-step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.12), rgba(74, 144, 217, 0.08));
+      color: var(--text-dark);
+      border: 1px solid rgba(0, 180, 216, 0.16);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .panel-title {
+      font-size: clamp(24px, 3vw, 30px);
+      font-weight: 900;
+      color: var(--text-dark);
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+
+    .panel-description {
+      font-size: 16px;
       line-height: 1.9;
-      max-width: 58ch;
-      margin-bottom: 24px;
+      color: var(--text-muted);
+      max-width: 62ch;
     }
-    .hero-actions {
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin: 22px 0 0;
+    }
+
+    .feature-list li {
+      background: rgba(245, 247, 250, 0.86);
+      border: 1px solid rgba(224, 230, 242, 0.96);
+      border-radius: 18px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 12px;
+      align-items: start;
+      line-height: 1.9;
+      color: var(--text-dark);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .feature-list li:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(13, 31, 78, 0.05);
+    }
+
+    .feature-list li::before {
+      content: '✓';
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 180, 216, 0.12);
+      color: var(--primary-dark);
+      font-weight: 900;
+      margin-top: 2px;
+    }
+
+    .feature-list strong {
+      color: var(--text-dark);
+    }
+
+    .hint-box,
+    .success-box,
+    .live-box {
+      border-radius: 20px;
+      padding: 16px 18px;
+      margin-top: 18px;
+      line-height: 1.85;
+      border: 1px solid transparent;
+      display: flex;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .hint-box {
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.1), rgba(74, 144, 217, 0.08));
+      border-color: rgba(0, 180, 216, 0.16);
+    }
+
+    .success-box {
+      background: linear-gradient(135deg, rgba(82, 183, 136, 0.12), rgba(45, 106, 79, 0.08));
+      border-color: rgba(82, 183, 136, 0.18);
+    }
+
+    .live-box {
+      background: linear-gradient(135deg, rgba(155, 114, 207, 0.1), rgba(74, 144, 217, 0.08));
+      border-color: rgba(155, 114, 207, 0.18);
+      display: none;
+    }
+
+    .hint-box::before,
+    .success-box::before,
+    .live-box::before {
+      font-size: 18px;
+      line-height: 1;
+      margin-top: 3px;
+    }
+
+    .hint-box::before { content: 'ℹ️'; }
+    .success-box::before { content: '✅'; }
+    .live-box::before { content: '✨'; }
+    .live-box.show { display: flex; }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mini-card {
+      background: linear-gradient(180deg, #ffffff, #f7fbff);
+      border: 1px solid rgba(224, 230, 242, 0.95);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 8px 18px rgba(13, 31, 78, 0.04);
+    }
+
+    .mini-card-label {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .mini-card-value {
+      color: var(--text-dark);
+      font-size: 15px;
+      line-height: 1.8;
+      font-weight: 800;
+    }
+
+    .interactive-tags,
+    .status-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 22px;
+      margin-top: 18px;
     }
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-    .stat-card {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.12);
-      text-align: center;
-    }
-    .stat-num {
-      display: block;
-      color: #fff;
-      font-size: 28px;
-      font-weight: 900;
-      margin-bottom: 4px;
-    }
-    .stat-label {
-      color: rgba(255,255,255,0.84);
-      font-size: 13px;
-      line-height: 1.6;
-      font-weight: 600;
-    }
-    .side-head {
-      display: flex;
+
+    .interactive-tag,
+    .badge {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      border: 1px solid rgba(224, 230, 242, 0.95);
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      color: var(--text-dark);
+      box-shadow: 0 8px 18px rgba(13, 31, 78, 0.04);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .interactive-tag:hover,
+    .badge:hover,
+    .action-btn.secondary:hover,
+    .mini-btn:hover {
+      box-shadow: 0 14px 24px rgba(13, 31, 78, 0.08);
+    }
+
+    .interactive-tag:hover,
+    .badge:hover {
+      transform: translateY(-2px);
+      border-color: rgba(0, 180, 216, 0.22);
+    }
+
+    .interactive-tag.active,
+    .badge.active {
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.14), rgba(74, 144, 217, 0.1));
+      border-color: rgba(0, 180, 216, 0.26);
+    }
+
+    .badge.accepted { color: #2d6a4f; }
+    .badge.pending { color: #b7791f; }
+    .badge.rejected { color: #c0392b; }
+
+    .panel-actions {
+      display: flex;
+      flex-wrap: wrap;
       gap: 12px;
-      color: #fff;
+      margin-top: 24px;
+      justify-content: space-between;
+      align-items: center;
     }
-    .side-title {
-      font-size: 21px;
-      font-weight: 900;
-      line-height: 1.4;
-    }
-    .side-sub {
-      color: rgba(255,255,255,0.82);
-      font-size: 13px;
-      line-height: 1.7;
-      margin-top: 4px;
-    }
-    .checklist {
-      display: grid;
+
+    .action-group {
+      display: flex;
+      flex-wrap: wrap;
       gap: 10px;
     }
-    .check-item {
-      width: 100%;
-      text-align: right;
-      padding: 14px 14px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.12);
+
+    .action-btn,
+    .mini-btn {
+      padding: 13px 18px;
+      font-size: 14px;
+      min-height: 48px;
+    }
+
+    .action-btn.secondary,
+    .mini-btn {
+      color: var(--text-dark);
+      background: linear-gradient(180deg, #ffffff, #f7fbff);
+      border: 1px solid rgba(224, 230, 242, 0.95);
+      box-shadow: 0 8px 18px rgba(13, 31, 78, 0.04);
+    }
+
+    .side-box {
+      padding: 22px;
+      position: sticky;
+      top: 98px;
+    }
+
+    .side-box h3 {
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      color: var(--text-dark);
+    }
+
+    .summary-card {
+      background: linear-gradient(135deg, rgba(13, 31, 78, 0.96), rgba(26, 51, 110, 0.96));
       color: #fff;
+      padding: 18px;
+      border-radius: 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 16px 34px rgba(13, 31, 78, 0.18);
+    }
+
+    .summary-card .label {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .summary-card .value {
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .summary-card p {
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 14px;
+    }
+
+    .checklist {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .check-item {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: 12px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(245, 247, 250, 0.86);
+      border: 1px solid rgba(224, 230, 242, 0.92);
+      transition: all 0.25s ease;
     }
-    .check-item:hover {
-      background: rgba(255,255,255,0.15);
-      box-shadow: 0 12px 24px rgba(3,16,41,0.14);
-    }
-    .check-copy { display: flex; align-items: center; gap: 12px; }
+
     .check-mark {
       width: 28px;
       height: 28px;
       min-width: 28px;
       border-radius: 50%;
-      border: 2px solid rgba(255,255,255,0.42);
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      background: rgba(13, 31, 78, 0.06);
+      color: var(--text-muted);
       font-size: 14px;
-      transition: transform .22s ease, background .22s ease, border-color .22s ease;
-    }
-    .check-item.done {
-      background: rgba(60,175,115,0.18);
-      border-color: rgba(143,255,182,0.22);
-    }
-    .check-item.done .check-mark {
-      background: #fff;
-      border-color: #fff;
-      color: var(--success);
-      transform: scale(1.06);
-      animation: pop .28s ease;
-    }
-    @keyframes pop {
-      0% { transform: scale(.84); }
-      100% { transform: scale(1.06); }
-    }
-    .side-footer {
-      margin-top: auto;
-      padding-top: 8px;
-      color: rgba(255,255,255,0.8);
-      font-size: 13px;
-      line-height: 1.8;
-      border-top: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .section {
-      padding: 70px 0;
-    }
-    .section-head {
-      text-align: center;
-      margin-bottom: 26px;
-    }
-    .section-eyebrow {
-      display: inline-block;
-      padding: 8px 16px;
-      border-radius: 999px;
-      background: rgba(15,157,138,0.08);
-      border: 1px solid rgba(15,157,138,0.16);
-      color: var(--primary-dark);
-      font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-    .section-title {
-      font-size: clamp(28px, 4vw, 42px);
-      color: var(--text);
-      line-height: 1.35;
-      margin-bottom: 12px;
       font-weight: 900;
     }
-    .section-desc {
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.9;
-      max-width: 70ch;
-      margin-inline: auto;
+
+    .check-item.done {
+      background: linear-gradient(135deg, rgba(82, 183, 136, 0.12), rgba(255, 255, 255, 0.96));
+      border-color: rgba(82, 183, 136, 0.22);
     }
 
-    .bento-grid {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 18px;
-      align-items: stretch;
+    .check-item.done .check-mark {
+      background: linear-gradient(135deg, var(--accent), #2d6a4f);
+      color: #fff;
     }
-    .bento-card {
+
+    .check-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    .quick-note {
+      margin-top: 18px;
+      border-radius: 20px;
+      padding: 16px;
+      background: linear-gradient(135deg, rgba(244, 196, 48, 0.14), rgba(255, 255, 255, 0.94));
+      border: 1px solid rgba(244, 196, 48, 0.24);
+      color: var(--text-dark);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .mini-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .mini-btn {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: 28px;
+      padding: 60px 40px;
+      text-align: center;
+      color: #fff;
+      margin: 0 24px 80px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 16px 50px rgba(13, 31, 78, 0.3);
       position: relative;
       overflow: hidden;
-      border-radius: var(--radius-xl);
-      background: linear-gradient(180deg, #fff 0%, #f9fbff 100%);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
-      padding: 24px;
-      transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
     }
-    .bento-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(15,157,138,0.20);
-    }
-    .bento-card::before {
-      content: "";
+
+    .cta-section::before {
+      content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top right, rgba(15,157,138,0.08), transparent 34%);
-      pointer-events: none;
-    }
-    .bento-lg { grid-column: span 6; min-height: 250px; }
-    .bento-md { grid-column: span 3; min-height: 250px; }
-    .bento-wide { grid-column: span 8; min-height: 220px; }
-    .bento-tall { grid-column: span 4; min-height: 220px; }
-    .card-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, rgba(15,157,138,0.12), rgba(22,181,198,0.14));
-      color: var(--primary-dark);
-      font-size: 23px;
-      margin-bottom: 18px;
-    }
-    .card-title {
-      font-size: 24px;
-      font-weight: 900;
-      color: var(--text);
-      line-height: 1.4;
-      margin-bottom: 12px;
-    }
-    .card-text {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.9;
-      margin-bottom: 16px;
-    }
-    .key-line {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 12px 0;
-      border-top: 1px dashed rgba(94,108,134,0.18);
-      color: var(--text);
-      font-size: 14px;
-    }
-    .key-line:first-of-type { border-top: none; padding-top: 0; }
-    .key-label { color: var(--muted); font-weight: 700; }
-    .key-value { color: var(--text); font-weight: 900; }
-    .mini-list { display: grid; gap: 10px; }
-    .mini-pill {
-      padding: 11px 14px;
-      border-radius: 15px;
-      background: var(--bg-soft);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 1.6;
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(0, 180, 216, 0.2) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 50%, rgba(155, 114, 207, 0.15) 0%, transparent 60%);
     }
 
-    .journey-wrap {
-      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(250,252,255,0.96));
-      border: 1px solid var(--border);
-      border-radius: 34px;
-      box-shadow: var(--shadow-soft);
-      padding: 24px;
-      overflow: hidden;
-    }
-    .journey-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-    .journey-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(15,157,138,0.08);
-      border: 1px solid rgba(15,157,138,0.14);
-      color: var(--primary-dark);
-      font-size: 14px;
-      font-weight: 800;
-    }
-    .progress-meta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--muted);
-      font-weight: 800;
-      font-size: 14px;
-    }
-    .progress-track {
+    .cta-content {
       position: relative;
-      height: 10px;
-      border-radius: 999px;
-      overflow: hidden;
-      background: rgba(221,230,242,0.9);
-      margin-bottom: 20px;
-    }
-    .progress-fill {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: 16.66%;
-      border-radius: inherit;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      transition: width .3s ease;
-    }
-    .step-chips {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 22px;
-    }
-    .step-chip {
-      padding: 14px 12px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      background: #fff;
-      box-shadow: 0 10px 24px rgba(13,31,78,0.04);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      text-align: center;
-      min-height: 98px;
-      color: var(--muted);
-    }
-    .step-chip:hover {
-      box-shadow: 0 16px 30px rgba(13,31,78,0.08);
-      border-color: rgba(15,157,138,0.18);
-    }
-    .step-chip.active {
-      color: var(--text);
-      border-color: rgba(15,157,138,0.22);
-      background: linear-gradient(180deg, #fff, #eefaf8);
-    }
-    .step-chip.done {
-      background: linear-gradient(180deg, #fff, #effaf3);
-      border-color: rgba(60,175,115,0.18);
-      color: var(--text);
-    }
-    .chip-index {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 18px;
-      color: var(--text);
-      background: var(--bg-soft);
-      transition: inherit;
-    }
-    .step-chip.active .chip-index {
-      color: #fff;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      box-shadow: 0 12px 26px rgba(15,157,138,0.22);
-    }
-    .step-chip.done .chip-index {
-      color: #fff;
-      background: linear-gradient(135deg, var(--success), #79c89d);
-      box-shadow: 0 12px 26px rgba(60,175,115,0.16);
-    }
-    .chip-title {
-      font-size: 13px;
-      font-weight: 800;
-      line-height: 1.55;
+      z-index: 1;
     }
 
-    .stage-panel {
-      display: none;
-      animation: rise .35s ease;
-    }
-    .stage-panel.active { display: block; }
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .panel-shell {
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      background: linear-gradient(180deg, #fff, #fbfcfe);
-      box-shadow: 0 14px 30px rgba(13,31,78,0.05);
-      padding: 28px;
-    }
-    .panel-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-    .panel-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 15px;
-      border-radius: 999px;
-      background: rgba(15,157,138,0.08);
-      border: 1px solid rgba(15,157,138,0.14);
-      color: var(--primary-dark);
-      font-size: 14px;
-      font-weight: 800;
-    }
-    .panel-title {
-      font-size: clamp(24px, 3vw, 32px);
-      line-height: 1.45;
-      font-weight: 900;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-    .panel-desc {
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.9;
-      max-width: 64ch;
-      margin-bottom: 20px;
-    }
-    .panel-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 14px;
-    }
-    .info-card {
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      background: linear-gradient(180deg, #ffffff, #f8fbff);
-      padding: 18px;
-      min-height: 100%;
-    }
-    .info-card h4 {
-      font-size: 16px;
-      font-weight: 900;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-    .info-card p, .info-card li {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.85;
-    }
-    .clean-list {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-    }
-    .clean-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      color: var(--text);
-    }
-    .clean-list li::before {
-      content: '•';
-      color: var(--primary);
-      font-weight: 900;
-      font-size: 20px;
-      line-height: 1;
-      margin-top: 5px;
-    }
-
-    .flow-strip {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 10px;
-      margin-top: 18px;
-    }
-    .flow-card {
-      padding: 14px;
-      border-radius: 18px;
-      background: var(--bg-soft);
-      border: 1px solid var(--border);
-      text-align: center;
-    }
-    .flow-card strong {
-      display: block;
-      font-size: 14px;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-    .flow-card span {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.55;
-    }
-
-    .panel-actions {
-      margin-top: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .actions-cluster {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .action-btn {
-      padding: 12px 20px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 800;
-      text-decoration: none;
-    }
-    .action-btn.primary {
-      color: #fff;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      box-shadow: 0 12px 26px rgba(15,157,138,0.2);
-    }
-    .action-btn.secondary {
-      color: var(--text);
-      background: #fff;
-      border: 1px solid var(--border);
-    }
-    .step-note {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
+    .cta-section h2 {
+      font-family: 'Amiri', serif;
+      font-size: clamp(24px, 4vw, 36px);
+      margin-bottom: 16px;
       font-weight: 700;
     }
 
-    .footer {
-      padding: 28px 0 44px;
-      color: var(--muted);
-      text-align: center;
-      font-size: 14px;
-      border-top: 1px solid var(--border);
-      background: #fff;
-      margin-top: 50px;
+    .cta-section p {
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 16px;
+      margin-bottom: 32px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.9;
     }
-    .footer a { color: var(--primary-dark); font-weight: 800; }
 
-    @media (max-width: 1100px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .bento-lg, .bento-md, .bento-wide, .bento-tall { grid-column: span 12; min-height: auto; }
-      .step-chips {
-        grid-template-columns: repeat(6, 180px);
-        overflow-x: auto;
-        padding-bottom: 6px;
-        scrollbar-width: thin;
+    .cta-btn {
+      padding: 16px 48px;
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 14px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-light);
+      background: var(--white);
+      margin-top: 40px;
+      line-height: 1.7;
+    }
+
+    footer a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 1024px) {
+      .journey-stage {
+        grid-template-columns: 1fr;
+      }
+
+      .side-box {
+        position: static;
       }
     }
 
-    @media (max-width: 860px) {
-      .site-header { padding: 12px 0; }
-      .header-inner { flex-direction: column-reverse; align-items: stretch; }
-      .header-brand { justify-content: center; }
-      .header-copy { text-align: center; }
-      .header-btn-wrap { display: flex; justify-content: center; }
-      .hero { padding: 58px 0 52px; }
-      .hero-main, .hero-side { padding: 20px; }
-      .hero-actions { flex-direction: column; }
-      .hero-actions .btn { width: 100%; }
-      .hero-stats { grid-template-columns: 1fr; }
-      .journey-wrap, .panel-shell { padding: 18px; border-radius: 24px; }
-      .panel-grid { grid-template-columns: 1fr; }
-      .flow-strip { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .panel-actions { flex-direction: column; align-items: stretch; }
-      .actions-cluster { width: 100%; flex-direction: column; }
-      .action-btn { width: 100%; }
-      .step-note { text-align: center; }
+    @media (max-width: 768px) {
+      .site-header {
+        padding: 12px 16px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .header-brand {
+        justify-content: flex-start;
+        text-align: right;
+        flex: 1 1 auto;
+      }
+
+      .header-text {
+        text-align: right;
+        align-items: flex-start;
+      }
+
+      .header-btn {
+        width: auto;
+        min-height: 46px;
+        padding: 10px 16px;
+      }
+
+      .hero {
+        padding: 60px 16px 82px;
+      }
+
+      .hero-badge {
+        font-size: 13px;
+        padding: 9px 18px;
+        margin-bottom: 22px;
+      }
+
+      .steps-container {
+        padding: 56px 16px;
+      }
+
+      .journey-shell {
+        padding: 18px;
+        border-radius: 28px;
+      }
+
+      .journey-topbar {
+        justify-content: center;
+        margin-bottom: 18px;
+      }
+
+      .stepper-nav-wrap {
+        margin-inline: -4px;
+      }
+
+      .stepper-nav {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        padding: 4px 4px 10px;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .stepper-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .step-tab {
+        min-width: 165px;
+        flex: 0 0 165px;
+        min-height: 96px;
+        scroll-snap-align: start;
+      }
+
+      .step-tab:last-child {
+        grid-column: auto;
+      }
+
+      .journey-stage {
+        gap: 16px;
+      }
+
+      .panel-box,
+      .side-box {
+        border-radius: 24px;
+      }
+
+      .panel-box {
+        padding: 22px;
+      }
+
+      .panel-head {
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .interactive-tag,
+      .badge {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .panel-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .action-group {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .action-group .action-btn {
+        width: 100%;
+      }
+
+      .mini-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cta-section {
+        padding: 40px 24px;
+        margin: 0 16px 60px;
+      }
+
+      .cta-btn {
+        width: 100%;
+      }
     }
 
-    @media (max-width: 640px) {
-      .container { width: min(var(--container), calc(100% - 20px)); }
-      .header-title { font-size: 14px; }
-      .header-subtitle { font-size: 11px; }
-      .header-logo { width: 48px; height: 48px; }
-      .hero-title { font-size: 34px; }
-      .hero-desc { font-size: 15px; }
-      .section { padding: 52px 0; }
-      .section-title { font-size: 28px; }
-      .section-desc { font-size: 15px; }
-      .card-title { font-size: 21px; }
-      .step-chips { grid-template-columns: repeat(6, 156px); gap: 10px; }
-      .step-chip { min-height: 92px; padding: 12px 10px; }
-      .chip-title { font-size: 12px; }
-      .progress-meta { width: 100%; justify-content: space-between; }
-      .flow-strip { grid-template-columns: 1fr; }
+    @media (max-width: 480px) {
+      .site-header {
+        padding: 10px 12px;
+      }
+
+      .header-logo {
+        width: 44px;
+        height: 44px;
+      }
+
+      .header-title {
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 50px 12px 60px;
+      }
+
+      .hero h1 {
+        font-size: 25px;
+      }
+
+      .hero p,
+      .panel-description,
+      .cta-section p {
+        font-size: 14px;
+      }
+
+      .steps-container {
+        padding: 42px 12px;
+      }
+
+      .journey-shell {
+        padding: 14px;
+      }
+
+      .journey-chip,
+      .journey-progress-text,
+      .step-tab-title,
+      .feature-list li,
+      .check-text,
+      .quick-note,
+      .mini-card-value {
+        font-size: 13px;
+      }
+
+      .step-tab {
+        min-width: 142px;
+        flex-basis: 142px;
+        min-height: 88px;
+        padding: 12px 10px;
+      }
+
+      .step-tab-num {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+      }
+
+      .panel-title {
+        font-size: 22px;
+      }
+
+      .feature-list li,
+      .hint-box,
+      .success-box,
+      .live-box,
+      .interactive-tag,
+      .badge,
+      .action-btn,
+      .mini-btn {
+        font-size: 13px;
+      }
+
+      .panel-box,
+      .side-box,
+      .summary-card {
+        border-radius: 22px;
+      }
+
+      .action-group,
+      .mini-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-section {
+        padding: 30px 16px;
+        margin: 0 12px 40px;
+      }
+
+      footer {
+        font-size: 12px;
+        padding: 24px 16px;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="site-header" id="siteHeader">
-    <div class="container header-inner">
-      <a class="btn btn-primary" href="https://parents.madares.sa/school-search/712" target="_blank" rel="noopener">منصة مدارس</a>
-      <div class="header-brand">
-        <div class="header-copy">
-          <div class="header-title">مدارس الملك عبدالعزيز النموذجية الأهلية</div>
-          <div class="header-subtitle">دليل التسجيل الإلكتروني عبر منصة مدارس · تبوك</div>
-        </div>
-        <div class="header-logo">
-          <img src="PhoNN_8196_912025826135541.jpg" alt="شعار مدارس الملك عبدالعزيز النموذجية الأهلية">
-        </div>
+  <header class="site-header">
+    <div class="header-brand">
+      <div class="header-logo">
+        <img src="logo.jpg" alt="شعار المدرسة" loading="lazy" />
+      </div>
+      <div class="header-text">
+        <div class="header-title">مدارس الملك عبدالعزيز النموذجية الأهلية</div>
+        <div class="header-subtitle">جمعية الملك عبدالعزيز الخيرية · تبوك</div>
       </div>
     </div>
+    <a class="header-btn" href="https://parents.madares.sa/school-search/712" target="_blank" rel="noopener noreferrer">منصة مدارس</a>
   </header>
 
   <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-main">
-        <span class="hero-badge">رحلة التسجيل — ٦ خطوات متسلسلة</span>
-        <h1 class="hero-title">سجّل ابنك أو ابنتك بخطوات واضحة، مختصرة، وتفاعلية</h1>
-        <p class="hero-desc">
-          هذا الدليل يشرح مسار التقديم على مدارس الملك عبدالعزيز النموذجية الأهلية عبر منصة مدارس بشكل منظم،
-          مع عرض المتطلبات الأساسية أولًا ثم الانتقال بين الخطوات واحدة تلو الأخرى.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://parents.madares.sa/school-search/712" target="_blank" rel="noopener">قدّم على المدرسة</a>
-          <a class="btn btn-secondary" href="#journey">استعرض خطوات التسجيل</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-card">
-            <span class="stat-num">٦</span>
-            <span class="stat-label">مراحل مرتبة من صفحة المدرسة حتى الملخص</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">RTL</span>
-            <span class="stat-label">واجهة عربية واضحة ومتوافقة مع الجوال</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">1 → 1</span>
-            <span class="stat-label">إظهار مرحلة واحدة فقط لتقليل التشتت</span>
-          </div>
-        </div>
-      </div>
-
-      <aside class="hero-side">
-        <div class="side-head">
-          <div>
-            <div class="side-title">قائمة الاستعداد الذكية</div>
-            <div class="side-sub">اضغط على كل عنصر عند توفره لديك قبل بدء التسجيل</div>
-          </div>
-          <span class="hero-badge" style="margin:0; font-size:12px; padding:8px 14px;">تفاعلية</span>
-        </div>
-
-        <div class="checklist" id="checklist">
-          <button class="check-item" type="button" data-key="id">
-            <span class="check-mark">✓</span>
-            <span class="check-copy">هوية / إقامة ولي الأمر</span>
-          </button>
-          <button class="check-item" type="button" data-key="birth">
-            <span class="check-mark">✓</span>
-            <span class="check-copy">تاريخ ميلاد الابن / الابنة</span>
-          </button>
-          <button class="check-item" type="button" data-key="relation">
-            <span class="check-mark">✓</span>
-            <span class="check-copy">صفة العلاقة: أب / وصي / حاضن</span>
-          </button>
-          <button class="check-item" type="button" data-key="docs">
-            <span class="check-mark">✓</span>
-            <span class="check-copy">المستندات الداعمة عند الحاجة</span>
-          </button>
-        </div>
-
-        <div class="side-footer">
-          عند اكتمال القائمة، يمكنك البدء مباشرة من صفحة المدرسة ثم متابعة الخطوات بالتسلسل داخل المنصة.
-        </div>
-      </aside>
+    <div class="hero-content">
+      <h1>كيف يمكنني تسجيل ابني في منصة مدارس؟</h1>
+      <p>استعرض الخطوات بشكل تفاعلي، تنقّل بينها بسهولة، وتعرّف على المطلوب في كل مرحلة حتى تكتمل عملية التسجيل بوضوح وسلاسة.</p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-eyebrow">نظرة سريعة قبل البدء</span>
-        <h2 class="section-title">شبكة معلومات ذكية بأسلوب Bento</h2>
-        <p class="section-desc">تم تجميع أهم المعلومات في بطاقات واضحة وسريعة القراءة حتى يعرف ولي الأمر ما الذي يحتاجه قبل التقديم وما الذي سيظهر له أثناء الرحلة.</p>
-      </div>
-
-      <div class="bento-grid">
-        <article class="bento-card bento-lg">
-          <div class="card-icon">🏫</div>
-          <h3 class="card-title">من صفحة المدرسة إلى الطلب النهائي</h3>
-          <p class="card-text">تبدأ الرحلة من صفحة المدرسة داخل منصة مدارس، ثم تنتقل إلى المقدمة، ثم التحقق من بيانات ولي الأمر، ثم التفاصيل، ثم معلومات الابن / الابنة، وأخيرًا الملخص قبل الإرسال.</p>
-          <div class="key-line"><span class="key-label">نقطة البداية</span><span class="key-value">زر «قدّم على المدرسة»</span></div>
-          <div class="key-line"><span class="key-label">عدد المراحل</span><span class="key-value">٦ مراحل متسلسلة</span></div>
-          <div class="key-line"><span class="key-label">أسلوب العرض</span><span class="key-value">مرحلة واحدة في كل مرة</span></div>
-        </article>
-
-        <article class="bento-card bento-md">
-          <div class="card-icon">🪪</div>
-          <h3 class="card-title">التحقق الأولي</h3>
-          <p class="card-text">يظهر التحقق من خلال نوع الهوية أو الإقامة، رقم الهوية أو الإقامة، تاريخ الميلاد، وصفة العلاقة مع الطالب أو الطالبة.</p>
-        </article>
-
-        <article class="bento-card bento-md">
-          <div class="card-icon">📁</div>
-          <h3 class="card-title">المستندات المطلوبة</h3>
-          <div class="mini-list">
-            <div class="mini-pill">الأب: يمكن التحقق من علاقته غالبًا عبر الهوية الوطنية</div>
-            <div class="mini-pill">الوصي: مستندات الوصاية عند الحاجة</div>
-            <div class="mini-pill">الحاضن: وثائق الحضانة عند الحاجة</div>
-            <div class="mini-pill">التقرير الطبي: اختياري</div>
-          </div>
-        </article>
-
-        <article class="bento-card bento-wide">
-          <div class="card-icon">🧭</div>
-          <h3 class="card-title">ما الذي يراه ولي الأمر داخل المنصة؟</h3>
-          <p class="card-text">واجهة متدرجة تبدأ بصفحة المدرسة، ثم مقدمة تجهيز التسجيل، ثم شاشة التحقق، ثم تعبئة البيانات، ثم إضافة معلومات الابن / الابنة، ثم شاشة الملخص النهائية للمراجعة.</p>
-          <div class="flow-strip">
-            <div class="flow-card"><strong>١</strong><span>صفحة المدرسة</span></div>
-            <div class="flow-card"><strong>٢</strong><span>المقدمة</span></div>
-            <div class="flow-card"><strong>٣</strong><span>التحقق</span></div>
-            <div class="flow-card"><strong>٤</strong><span>التفاصيل</span></div>
-          </div>
-        </article>
-
-        <article class="bento-card bento-tall">
-          <div class="card-icon">✅</div>
-          <h3 class="card-title">بعد التقديم</h3>
-          <p class="card-text">بعد الوصول إلى الملخص ومراجعة البيانات، يتم إرسال الطلب ومتابعة حالته من خلال المنصة وفق تحديثات المدرسة.</p>
-          <div class="key-line"><span class="key-label">المتابعة</span><span class="key-value">منصة مدارس</span></div>
-          <div class="key-line"><span class="key-label">المراجعة</span><span class="key-value">قبل الإرسال النهائي</span></div>
-          <div class="key-line"><span class="key-label">النتيجة</span><span class="key-value">تحديث حالة الطلب</span></div>
-        </article>
-      </div>
+  <section class="steps-container" id="registration-journey">
+    <div class="steps-title">
+      <h2>رحلة التسجيل التفاعلية</h2>
     </div>
-  </section>
 
-  <section class="section" id="journey">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-eyebrow">الرحلة التفاعلية</span>
-        <h2 class="section-title">خطوات التسجيل بالتسلسل</h2>
-        <p class="section-desc">اعرض كل مرحلة لوحدها، وانتقل للمرحلة التالية عند الانتهاء من قراءة الحالية. هذا يقلل التكدس ويجعل المسار أوضح لولي الأمر.</p>
+    <div class="journey-shell">
+      <div class="journey-topbar">
+        <div class="journey-progress-text" id="journeyProgressText">الخطوة 1 من 5</div>
       </div>
 
-      <div class="journey-wrap">
-        <div class="journey-top">
-          <div class="journey-status">المسار الحالي: <span id="currentStageLabel">صفحة المدرسة</span></div>
-          <div class="progress-meta">
-            <span>نسبة التقدم</span>
-            <strong class="ltr" id="progressPercent">16.66%</strong>
+      <div class="stepper-nav-wrap">
+        <div class="stepper-progress" aria-hidden="true">
+          <div class="stepper-progress-bar" id="stepperProgressBar"></div>
+        </div>
+
+        <div class="stepper-nav" role="tablist" aria-label="خطوات التسجيل">
+          <button class="step-tab active" type="button" role="tab" aria-selected="true" data-step="0">
+            <span class="step-tab-num">١</span>
+            <small>الخطوة الأولى</small>
+            <span class="step-tab-title">بدء طلب الالتحاق</span>
+          </button>
+          <button class="step-tab" type="button" role="tab" aria-selected="false" data-step="1">
+            <span class="step-tab-num">٢</span>
+            <small>الخطوة الثانية</small>
+            <span class="step-tab-title">إدخال بيانات الطالب</span>
+          </button>
+          <button class="step-tab" type="button" role="tab" aria-selected="false" data-step="2">
+            <span class="step-tab-num">٣</span>
+            <small>الخطوة الثالثة</small>
+            <span class="step-tab-title">التحقق بالرمز الأمني</span>
+          </button>
+          <button class="step-tab" type="button" role="tab" aria-selected="false" data-step="3">
+            <span class="step-tab-num">٤</span>
+            <small>الخطوة الرابعة</small>
+            <span class="step-tab-title">تعبئة نموذج الطلب</span>
+          </button>
+          <button class="step-tab" type="button" role="tab" aria-selected="false" data-step="4">
+            <span class="step-tab-num">٥</span>
+            <small>الخطوة الأخيرة</small>
+            <span class="step-tab-title">متابعة حالة الطلب</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="journey-stage">
+        <div class="panel-box">
+          <article class="step-panel active" data-panel="0" role="tabpanel">
+            <div class="panel-head">
+              <div>
+                <div class="panel-step-badge">🟦 البداية الرسمية</div>
+                <h3 class="panel-title">بدء طلب الالتحاق</h3>
+                <p class="panel-description">هذه أول نقطة دخول لولي الأمر. بمجرد الضغط على زر طلب الالتحاق في صفحة المدرسة، يتم نقلك إلى نموذج التسجيل الخاص بالمدرسة لبدء الإجراءات.</p>
+              </div>
+            </div>
+            <ul class="feature-list">
+              <li>انقر على زر <strong>+ طلب الالتحاق</strong> في صفحة تفاصيل المدرسة.</li>
+              <li>سيتم تحويلك مباشرةً إلى نموذج التسجيل الخاص بالمدرسة.</li>
+              <li>ابدأ فقط بعد التأكد من جاهزية البيانات الأساسية للطالب وولي الأمر.</li>
+            </ul>
+            <div class="details-grid">
+              <div class="mini-card">
+                <div class="mini-card-label">ما الذي تحتاجه الآن؟</div>
+                <div class="mini-card-value">الدخول لصفحة المدرسة ثم الضغط على زر الالتحاق.</div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-card-label">هدف هذه المرحلة</div>
+                <div class="mini-card-value">فتح الطلب الرسمي والانتقال إلى بداية النموذج.</div>
+              </div>
+            </div>
+            <div class="hint-box">تأكد من توفر رقم الهوية وتاريخ الميلاد ورقم الجوال المسجل قبل أن تبدأ حتى لا تتوقف أثناء التقديم.</div>
+          </article>
+
+          <article class="step-panel" data-panel="1" role="tabpanel">
+            <div class="panel-head">
+              <div>
+                <div class="panel-step-badge">🧾 بيانات أساسية</div>
+                <h3 class="panel-title">إدخال بيانات الطالب</h3>
+                <p class="panel-description">في هذه المرحلة يتم التحقق من هوية الطالب وربط بياناته الأساسية بالنظام قبل السماح بالانتقال إلى الخطوات التالية.</p>
+              </div>
+            </div>
+            <ul class="feature-list">
+              <li>أدخل <strong>رقم هوية الطالب</strong> أو رقم الإقامة للطلاب غير السعوديين.</li>
+              <li>حدد <strong>تاريخ الميلاد</strong> بدقة من التقويم.</li>
+              <li>إذا كانت البيانات صحيحة، سينتقل النظام تلقائيًا إلى المرحلة التالية.</li>
+            </ul>
+            <div class="details-grid">
+              <div class="mini-card">
+                <div class="mini-card-label">معلومة مهمة</div>
+                <div class="mini-card-value">للطلاب غير السعوديين، رقم الهوية هو رقم الإقامة.</div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-card-label">أكثر خطأ شائع</div>
+                <div class="mini-card-value">كتابة رقم الهوية أو تاريخ الميلاد بطريقة غير مطابقة للسجل.</div>
+              </div>
+            </div>
+            <div class="hint-box">أي اختلاف بسيط في البيانات قد يمنعك من الانتقال، لذلك أدخلها كما هي تمامًا في المستندات الرسمية.</div>
+          </article>
+
+          <article class="step-panel" data-panel="2" role="tabpanel">
+            <div class="panel-head">
+              <div>
+                <div class="panel-step-badge">🔐 أمان وتأكيد</div>
+                <h3 class="panel-title">التحقق بالرمز الأمني</h3>
+                <p class="panel-description">بعد التحقق من البيانات، يرسل النظام رمزًا أمنيًا إلى الرقم المسجل لديك للتأكد من الهوية ومتابعة الطلب بطريقة آمنة.</p>
+              </div>
+            </div>
+            <ul class="feature-list">
+              <li>سيصلك <strong>رمز مكوّن من أربعة أرقام</strong> على رقم الجوال المسجل.</li>
+              <li>أدخل الرمز في المكان المخصص داخل الصفحة.</li>
+              <li>تأكد من صحة الرمز قبل المتابعة حتى لا تحتاج لإعادة الطلب.</li>
+            </ul>
+            <div class="details-grid">
+              <div class="mini-card">
+                <div class="mini-card-label">مدة صلاحية الرمز</div>
+                <div class="mini-card-value">10 دقائق فقط، وبعدها يمكنك طلب رمز جديد.</div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-card-label">النصيحة العملية</div>
+                <div class="mini-card-value">أبقِ هاتفك قريبًا وافتح الرسائل قبل البدء بهذه المرحلة.</div>
+              </div>
+            </div>
+            <div class="hint-box">إذا لم يصلك الرمز، راجع الرقم المسجل أولًا ثم أعد طلبه من النظام.</div>
+          </article>
+
+          <article class="step-panel" data-panel="3" role="tabpanel">
+            <div class="panel-head">
+              <div>
+                <div class="panel-step-badge">📝 النموذج الكامل</div>
+                <h3 class="panel-title">تعبئة نموذج طلب الالتحاق</h3>
+                <p class="panel-description">هذه المرحلة هي الأكثر تفصيلًا، وفيها يتم تعبئة جميع المعلومات المطلوبة عن الطالب وولي الأمر والرسوم ثم إرسال الطلب رسميًا.</p>
+              </div>
+            </div>
+            <ul class="feature-list">
+              <li>عبئ جميع البيانات المطلوبة بعناية قبل الإرسال.</li>
+              <li>النموذج مقسم إلى أقسام واضحة لتسهيل تعبئته خطوة بخطوة.</li>
+              <li>بعد قراءة الشروط والأحكام، اضغط على <strong>تقديم طلب الالتحاق</strong>.</li>
+            </ul>
+            <div class="interactive-tags" id="formTagsGroup">
+              <button class="interactive-tag active" type="button" data-message="يتضمن الاسم، الهوية، تاريخ الميلاد، والبيانات التعليمية الأساسية.">👤 تفاصيل الطالب</button>
+              <button class="interactive-tag" type="button" data-message="يشمل اختيار المدرسة والمرحلة والفصل أو البيانات المرتبطة بالالتحاق.">🏫 تفاصيل المدرسة</button>
+              <button class="interactive-tag" type="button" data-message="يتضمن معلومات الأب أو الأم ووسائل التواصل والعنوان والبيانات المطلوبة. ">👨‍👩‍👧 أولياء الأمور</button>
+              <button class="interactive-tag" type="button" data-message="يعرض الرسوم الدراسية أو البيانات المالية المرتبطة بإكمال الطلب.">💳 الرسوم الدراسية</button>
+              <button class="interactive-tag" type="button" data-message="في هذه المرحلة النهائية تراجع الشروط والأحكام ثم ترسل الطلب رسميًا للمعالجة.">📤 تقديم الطلب</button>
+            </div>
+            <div class="live-box show" id="formTagMessage">يتضمن الاسم، الهوية، تاريخ الميلاد، والبيانات التعليمية الأساسية.</div>
+            <div class="success-box">كلما كانت البيانات والمرفقات واضحة ومكتملة، كانت معالجة الطلب أسرع وأسهل.</div>
+          </article>
+
+          <article class="step-panel" data-panel="4" role="tabpanel">
+            <div class="panel-head">
+              <div>
+                <div class="panel-step-badge">📬 بعد الإرسال</div>
+                <h3 class="panel-title">متابعة حالة الطلب</h3>
+                <p class="panel-description">بعد إرسال الطلب، يمكنك متابعة حالته من لوحة التحكم الشخصية. ستظهر التحديثات تدريجيًا بحسب مرحلة المراجعة أو القبول أو الرفض.</p>
+              </div>
+            </div>
+            <ul class="feature-list">
+              <li>تابع حالة الطلب من خلال <strong>لوحة التحكم الشخصية</strong>.</li>
+              <li>سيصلك إشعار عند تحديث الحالة أو طلب معلومات إضافية.</li>
+              <li>راجع البريد الإلكتروني والرسائل النصية باستمرار حتى لا يفوتك أي تحديث.</li>
+            </ul>
+            <div class="status-badges" id="statusBadgesGroup">
+              <button class="badge accepted active" type="button" data-message="تعني أن الطلب اجتاز المراجعة وتم اعتماده للقبول أو الانتقال للخطوة التالية وفق إجراءات المدرسة.">✔ مقبولة</button>
+              <button class="badge pending" type="button" data-message="تعني أن الطلب لا يزال تحت المراجعة ولم يصدر فيه قرار نهائي حتى الآن.">⏳ قيد المراجعة</button>
+              <button class="badge rejected" type="button" data-message="تعني أن الطلب لم يُقبل، وقد تحتاج إلى مراجعة السبب أو التواصل مع المدرسة إن لزم.">✕ مرفوضة</button>
+            </div>
+            <div class="live-box show" id="statusMessage">تعني أن الطلب اجتاز المراجعة وتم اعتماده للقبول أو الانتقال للخطوة التالية وفق إجراءات المدرسة.</div>
+            <div class="hint-box">المتابعة المنتظمة بعد الإرسال لا تقل أهمية عن تعبئة الطلب نفسه، لأنها المرحلة التي تُظهر أي تحديث أو ملاحظة جديدة.</div>
+          </article>
+
+          <div class="panel-actions">
+            <div class="action-group">
+              <button class="action-btn secondary" type="button" id="prevStepBtn">السابق →</button>
+              <button class="action-btn primary" type="button" id="nextStepBtn">← التالي</button>
+            </div>
           </div>
         </div>
 
-        <div class="progress-track" aria-hidden="true">
-          <div class="progress-fill" id="progressFill"></div>
-        </div>
+        <aside class="side-box">
+          <h3>لوحة التقدم</h3>
+          <div class="summary-card">
+            <div class="label">نسبة الاستعراض</div>
+            <div class="value" id="progressPercent">20%</div>
+            <p id="summaryText">أنت الآن في بداية الرحلة. استعرض الخطوات واحدة تلو الأخرى لتحصل على صورة كاملة عن آلية التسجيل.</p>
+          </div>
 
-        <div class="step-chips" id="stepChips">
-          <button class="chip-btn step-chip active" data-step="1" type="button">
-            <span class="chip-index">١</span>
-            <span class="chip-title">صفحة المدرسة</span>
-          </button>
-          <button class="chip-btn step-chip" data-step="2" type="button">
-            <span class="chip-index">٢</span>
-            <span class="chip-title">المقدمة</span>
-          </button>
-          <button class="chip-btn step-chip" data-step="3" type="button">
-            <span class="chip-index">٣</span>
-            <span class="chip-title">التحقق من بيانات ولي الأمر</span>
-          </button>
-          <button class="chip-btn step-chip" data-step="4" type="button">
-            <span class="chip-index">٤</span>
-            <span class="chip-title">تفاصيل ولي الأمر</span>
-          </button>
-          <button class="chip-btn step-chip" data-step="5" type="button">
-            <span class="chip-index">٥</span>
-            <span class="chip-title">معلومات الابن / الابنة</span>
-          </button>
-          <button class="chip-btn step-chip" data-step="6" type="button">
-            <span class="chip-index">٦</span>
-            <span class="chip-title">الملخص</span>
-          </button>
-        </div>
+          <ul class="checklist" id="checklist">
+            <li class="check-item done"><span class="check-mark">✓</span><span class="check-text">بدء طلب الالتحاق</span></li>
+            <li class="check-item"><span class="check-mark">•</span><span class="check-text">إدخال بيانات الطالب</span></li>
+            <li class="check-item"><span class="check-mark">•</span><span class="check-text">التحقق بالرمز الأمني</span></li>
+            <li class="check-item"><span class="check-mark">•</span><span class="check-text">تعبئة نموذج الطلب</span></li>
+            <li class="check-item"><span class="check-mark">•</span><span class="check-text">متابعة حالة الطلب</span></li>
+          </ul>
 
-        <div class="stage-panels">
-          <section class="stage-panel active" data-step="1">
-            <div class="panel-shell">
-              <div class="panel-top">
-                <span class="panel-badge">الخطوة ١</span>
-              </div>
-              <h3 class="panel-title">صفحة المدرسة</h3>
-              <p class="panel-desc">يبدأ ولي الأمر من صفحة المدرسة داخل منصة مدارس، حيث تظهر معلومات المدرسة الأساسية ثم زر التقديم المباشر على المدرسة.</p>
-              <div class="panel-grid">
-                <article class="info-card">
-                  <h4>ما الذي يظهر هنا؟</h4>
-                  <ul class="clean-list">
-                    <li>اسم المدرسة والبرنامج.</li>
-                    <li>زر «قدّم على المدرسة».</li>
-                    <li>وسائل التواصل ومعلومات الصفحة.</li>
-                  </ul>
-                </article>
-                <article class="info-card">
-                  <h4>الإجراء المطلوب</h4>
-                  <p>الضغط على زر التقديم للانتقال إلى مسار التسجيل داخل منصة مدارس.</p>
-                </article>
-              </div>
-              <div class="panel-actions">
-                <span class="step-note">ابدأ من صفحة المدرسة ثم انتقل إلى المقدمة.</span>
-                <div class="actions-cluster">
-                  <a class="action-btn primary" href="https://parents.madares.sa/school-search/712" target="_blank" rel="noopener">قدّم على المدرسة</a>
-                  <button class="action-btn secondary next-step" type="button">التالي ←</button>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="stage-panel" data-step="2">
-            <div class="panel-shell">
-              <div class="panel-top">
-                <span class="panel-badge">الخطوة ٢</span>
-              </div>
-              <h3 class="panel-title">المقدمة</h3>
-              <p class="panel-desc">تعرض المقدمة تجهيز متطلبات التسجيل قبل البدء، وتشمل المستندات المرتبطة بصفة ولي الأمر وما إذا كانت هناك وثائق إضافية مطلوبة.</p>
-              <div class="panel-grid">
-                <article class="info-card">
-                  <h4>تجهيز متطلبات التسجيل</h4>
-                  <ul class="clean-list">
-                    <li>الأب</li>
-                    <li>الوصي</li>
-                    <li>الحاضن</li>
-                    <li>وثائق صحية اختيارية للابن / الابنة</li>
-                  </ul>
-                </article>
-                <article class="info-card">
-                  <h4>الهدف من هذه الشاشة</h4>
-                  <p>توضيح ما الذي يجب أن يكون جاهزًا قبل إدخال البيانات الفعلية داخل النموذج.</p>
-                </article>
-              </div>
-              <div class="panel-actions">
-                <div class="actions-cluster">
-                  <button class="action-btn secondary prev-step" type="button">→ السابق</button>
-                  <button class="action-btn primary next-step" type="button">التالي ←</button>
-                </div>
-                <span class="step-note">بعد مراجعة المتطلبات ينتقل ولي الأمر إلى شاشة التحقق.</span>
-              </div>
-            </div>
-          </section>
-
-          <section class="stage-panel" data-step="3">
-            <div class="panel-shell">
-              <div class="panel-top">
-                <span class="panel-badge">الخطوة ٣</span>
-              </div>
-              <h3 class="panel-title">التحقق من بيانات ولي الأمر</h3>
-              <p class="panel-desc">هذه الخطوة تتأكد من بيانات ولي الأمر وربطها بالابن أو الابنة قبل السماح باستكمال بقية النموذج.</p>
-              <div class="panel-grid">
-                <article class="info-card">
-                  <h4>عناصر التحقق الأساسية</h4>
-                  <ul class="clean-list">
-                    <li>نوع الهوية / الإقامة</li>
-                    <li>رقم الهوية / الإقامة</li>
-                    <li>تاريخ ميلاد الابن / الابنة</li>
-                    <li>اختيار العلاقة</li>
-                  </ul>
-                </article>
-                <article class="info-card">
-                  <h4>صفة العلاقة</h4>
-                  <ul class="clean-list">
-                    <li>الأب</li>
-                    <li>الوصي</li>
-                    <li>الحاضن</li>
-                  </ul>
-                </article>
-              </div>
-              <div class="panel-actions">
-                <div class="actions-cluster">
-                  <button class="action-btn secondary prev-step" type="button">→ السابق</button>
-                  <button class="action-btn primary next-step" type="button">التالي ←</button>
-                </div>
-                <span class="step-note">عند نجاح التحقق يتم الانتقال إلى تفاصيل ولي الأمر.</span>
-              </div>
-            </div>
-          </section>
-
-          <section class="stage-panel" data-step="4">
-            <div class="panel-shell">
-              <div class="panel-top">
-                <span class="panel-badge">الخطوة ٤</span>
-              </div>
-              <h3 class="panel-title">تفاصيل ولي الأمر</h3>
-              <p class="panel-desc">في هذه المرحلة تُستكمل بيانات ولي الأمر الأساسية داخل النموذج بحسب ما تسمح به المنصة بعد خطوة التحقق.</p>
-              <div class="panel-grid">
-                <article class="info-card">
-                  <h4>ما يتم استكماله</h4>
-                  <ul class="clean-list">
-                    <li>البيانات الشخصية الأساسية</li>
-                    <li>معلومات التواصل</li>
-                    <li>أي بيانات تنظيمية تطلبها المنصة</li>
-                  </ul>
-                </article>
-                <article class="info-card">
-                  <h4>مهم</h4>
-                  <p>يُفضّل التأكد من دقة البيانات لأن هذه المعلومات ستنعكس لاحقًا في الطلب النهائي والملخص.</p>
-                </article>
-              </div>
-              <div class="panel-actions">
-                <div class="actions-cluster">
-                  <button class="action-btn secondary prev-step" type="button">→ السابق</button>
-                  <button class="action-btn primary next-step" type="button">التالي ←</button>
-                </div>
-                <span class="step-note">بعد اكتمال بيانات ولي الأمر تبدأ مرحلة معلومات الطالب أو الطالبة.</span>
-              </div>
-            </div>
-          </section>
-
-          <section class="stage-panel" data-step="5">
-            <div class="panel-shell">
-              <div class="panel-top">
-                <span class="panel-badge">الخطوة ٥</span>
-              </div>
-              <h3 class="panel-title">معلومات الابن / الابنة</h3>
-              <p class="panel-desc">تُعرض هنا بيانات الطالب أو الطالبة المطلوبة للتسجيل وربط الطلب بالمرحلة التعليمية المناسبة داخل المدرسة.</p>
-              <div class="panel-grid">
-                <article class="info-card">
-                  <h4>أمثلة على البيانات</h4>
-                  <ul class="clean-list">
-                    <li>الاسم والبيانات التعليمية</li>
-                    <li>المعلومات المرتبطة بالمرحلة أو الصف</li>
-                    <li>أي مرفقات أو بيانات إضافية تطلبها المدرسة</li>
-                  </ul>
-                </article>
-                <article class="info-card">
-                  <h4>قبل المتابعة</h4>
-                  <p>راجع المدخلات بعناية قبل الانتقال إلى شاشة الملخص، لأن هذه الخطوة هي الأقرب للإرسال النهائي.</p>
-                </article>
-              </div>
-              <div class="panel-actions">
-                <div class="actions-cluster">
-                  <button class="action-btn secondary prev-step" type="button">→ السابق</button>
-                  <button class="action-btn primary next-step" type="button">التالي ←</button>
-                </div>
-                <span class="step-note">بعد هذه المرحلة يظهر الملخص النهائي للمراجعة.</span>
-              </div>
-            </div>
-          </section>
-
-          <section class="stage-panel" data-step="6">
-            <div class="panel-shell">
-              <div class="panel-top">
-                <span class="panel-badge">الخطوة ٦</span>
-              </div>
-              <h3 class="panel-title">الملخص</h3>
-              <p class="panel-desc">هذه الشاشة تجمع البيانات النهائية لمراجعتها قبل الإرسال، وهي آخر مرحلة في رحلة التسجيل قبل تقديم الطلب رسميًا.</p>
-              <div class="panel-grid">
-                <article class="info-card">
-                  <h4>ما الذي يراجعه ولي الأمر؟</h4>
-                  <ul class="clean-list">
-                    <li>بيانات ولي الأمر</li>
-                    <li>بيانات الابن / الابنة</li>
-                    <li>صحة التسلسل قبل اعتماد الطلب</li>
-                  </ul>
-                </article>
-                <article class="info-card">
-                  <h4>الخطوة النهائية</h4>
-                  <p>بعد التأكد من كل البيانات، يتم إرسال الطلب عبر المنصة ومتابعته حسب تحديثات المدرسة.</p>
-                </article>
-              </div>
-              <div class="panel-actions">
-                <div class="actions-cluster">
-                  <button class="action-btn secondary prev-step" type="button">→ السابق</button>
-                  <a class="action-btn primary" href="https://parents.madares.sa/school-search/712" target="_blank" rel="noopener">العودة إلى منصة مدارس</a>
-                </div>
-                <span class="step-note">انتهت الرحلة — يمكنك الآن مراجعة الصفحة أو العودة للمنصة.</span>
-              </div>
-            </div>
-          </section>
-        </div>
+          <div class="mini-actions">
+            <button class="mini-btn" type="button" id="goFirstBtn">العودة للبداية</button>
+            <button class="mini-btn" type="button" id="goLastBtn">اذهب للنهاية</button>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      منصة مدارس — دليل التسجيل لمدارس الملك عبدالعزيز النموذجية الأهلية · <a href="https://parents.madares.sa/school-search/712" target="_blank" rel="noopener">الانتقال إلى صفحة المدرسة</a>
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>هل أنت مستعد لتسجيل ابنك؟</h2>
+      <p>بعد أن شاهدت الرحلة التفاعلية، يمكنك الآن الانتقال مباشرةً إلى صفحة المدرسة والبدء في تقديم الطلب من خلال منصة مدارس.</p>
+      <a class="cta-btn" href="https://parents.madares.sa/school-search/712" target="_blank" rel="noopener noreferrer">ابدأ طلب الالتحاق الآن</a>
     </div>
+  </section>
+
+  <footer>
+    <p>منصة مدارس — دليل التسجيل &nbsp;|&nbsp; <a href="https://parents.madares.sa/school-search/712" target="_blank" rel="noopener noreferrer">مدارس الملك عبدالعزيز النموذجية الأهلية · تبوك</a></p>
   </footer>
 
   <script>
-    const header = document.getElementById('siteHeader');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 10);
-    });
-
-    const stepButtons = Array.from(document.querySelectorAll('.step-chip'));
-    const panels = Array.from(document.querySelectorAll('.stage-panel'));
-    const currentStageLabel = document.getElementById('currentStageLabel');
-    const progressFill = document.getElementById('progressFill');
+    const stepTabs = [...document.querySelectorAll('.step-tab')];
+    const stepPanels = [...document.querySelectorAll('.step-panel')];
+    const checklistItems = [...document.querySelectorAll('.check-item')];
+    const stepperProgressBar = document.getElementById('stepperProgressBar');
+    const journeyProgressText = document.getElementById('journeyProgressText');
     const progressPercent = document.getElementById('progressPercent');
-    const totalSteps = panels.length;
-    let currentStep = 1;
-    let maxUnlocked = 1;
+    const summaryText = document.getElementById('summaryText');
+    const prevStepBtn = document.getElementById('prevStepBtn');
+    const nextStepBtn = document.getElementById('nextStepBtn');
+    const goFirstBtn = document.getElementById('goFirstBtn');
+    const goLastBtn = document.getElementById('goLastBtn');
 
-    const stepTitles = {
-      1: 'صفحة المدرسة',
-      2: 'المقدمة',
-      3: 'التحقق من بيانات ولي الأمر',
-      4: 'تفاصيل ولي الأمر',
-      5: 'معلومات الابن / الابنة',
-      6: 'الملخص'
-    };
+    const stepSummaries = [
+      'أنت الآن في بداية الرحلة. استعرض الخطوات واحدة تلو الأخرى لتحصل على صورة كاملة عن آلية التسجيل.',
+      'أنت في مرحلة التحقق من بيانات الطالب، وهي المرحلة التي تحدد إمكانية الانتقال لبقية الخطوات.',
+      'أنت في مرحلة التأكيد الأمني. نجاح هذه الخطوة يعني أن الطلب يسير بشكل صحيح وآمن.',
+      'أنت الآن في أهم مرحلة عملية، وهي تعبئة النموذج وإرساله رسميًا إلى المدرسة.',
+      'أنت في المرحلة الختامية، حيث تتم متابعة النتيجة النهائية ومعرفة حالة الطلب.'
+    ];
 
-    function updateJourney(step) {
-      currentStep = step;
-      const progress = ((step / totalSteps) * 100).toFixed(2);
-      currentStageLabel.textContent = stepTitles[step];
-      progressFill.style.width = progress + '%';
-      progressPercent.textContent = progress + '%';
+    let currentStep = 0;
+    const completed = new Set([0]);
 
-      stepButtons.forEach((btn) => {
-        const btnStep = Number(btn.dataset.step);
-        btn.classList.toggle('active', btnStep === step);
-        btn.classList.toggle('done', btnStep < step);
-        btn.disabled = btnStep > maxUnlocked;
-        btn.style.opacity = btnStep > maxUnlocked ? '0.6' : '1';
-        btn.style.cursor = btnStep > maxUnlocked ? 'not-allowed' : 'pointer';
-      });
-
-      panels.forEach((panel) => {
-        panel.classList.toggle('active', Number(panel.dataset.step) === step);
+    function updateInteractiveGroups(groupSelector, messageTargetId) {
+      const group = document.querySelector(groupSelector);
+      if (!group) return;
+      const target = document.getElementById(messageTargetId);
+      const buttons = [...group.querySelectorAll('button')];
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          buttons.forEach((item) => item.classList.remove('active'));
+          button.classList.add('active');
+          if (target) target.textContent = button.dataset.message || '';
+        });
       });
     }
 
-    stepButtons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const step = Number(btn.dataset.step);
-        if (step <= maxUnlocked) {
-          updateJourney(step);
-        }
+    function goToStep(index) {
+      currentStep = Math.max(0, Math.min(index, stepTabs.length - 1));
+      completed.add(currentStep);
+
+      stepTabs.forEach((tab, idx) => {
+        const isActive = idx === currentStep;
+        tab.classList.toggle('active', isActive);
+        tab.classList.toggle('done', completed.has(idx) && !isActive);
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
       });
+
+      stepPanels.forEach((panel, idx) => {
+        panel.classList.toggle('active', idx === currentStep);
+      });
+
+      checklistItems.forEach((item, idx) => {
+        const mark = item.querySelector('.check-mark');
+        const isDone = completed.has(idx) || idx === currentStep;
+        item.classList.toggle('done', isDone);
+        if (mark) mark.textContent = isDone ? '✓' : '•';
+      });
+
+      const progress = ((currentStep + 1) / stepTabs.length) * 100;
+      stepperProgressBar.style.width = progress + '%';
+      journeyProgressText.textContent = `الخطوة ${currentStep + 1} من ${stepTabs.length}`;
+      progressPercent.textContent = Math.round(progress) + '%';
+      summaryText.textContent = stepSummaries[currentStep];
+
+      prevStepBtn.disabled = currentStep === 0;
+      nextStepBtn.disabled = currentStep === stepTabs.length - 1;
+      prevStepBtn.style.opacity = currentStep === 0 ? '0.6' : '1';
+      nextStepBtn.style.opacity = currentStep === stepTabs.length - 1 ? '0.6' : '1';
+    }
+
+    stepTabs.forEach((tab) => {
+      tab.addEventListener('click', () => goToStep(Number(tab.dataset.step)));
     });
 
-    document.querySelectorAll('.next-step').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        if (currentStep < totalSteps) {
-          maxUnlocked = Math.max(maxUnlocked, currentStep + 1);
-          updateJourney(currentStep + 1);
-          document.getElementById('journey').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
+    prevStepBtn.addEventListener('click', () => goToStep(currentStep - 1));
+    nextStepBtn.addEventListener('click', () => goToStep(currentStep + 1));
+    goFirstBtn.addEventListener('click', () => goToStep(0));
+    goLastBtn.addEventListener('click', () => goToStep(stepTabs.length - 1));
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') goToStep(currentStep + 1);
+      if (event.key === 'ArrowRight') goToStep(currentStep - 1);
     });
 
-    document.querySelectorAll('.prev-step').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        if (currentStep > 1) {
-          updateJourney(currentStep - 1);
-          document.getElementById('journey').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    const checklistItems = document.querySelectorAll('.check-item');
-    const checklistState = JSON.parse(localStorage.getItem('schoolGuideChecklist') || '{}');
-
-    checklistItems.forEach((item) => {
-      const key = item.dataset.key;
-      if (checklistState[key]) item.classList.add('done');
-      item.addEventListener('click', () => {
-        item.classList.toggle('done');
-        checklistState[key] = item.classList.contains('done');
-        localStorage.setItem('schoolGuideChecklist', JSON.stringify(checklistState));
-      });
-    });
-
-    updateJourney(1);
+    updateInteractiveGroups('#formTagsGroup', 'formTagMessage');
+    updateInteractiveGroups('#statusBadgesGroup', 'statusMessage');
+    goToStep(0);
   </script>
 </body>
 </html>
