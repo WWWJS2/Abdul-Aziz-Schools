@@ -76,45 +76,41 @@
     }
 
     .site-header {
-      background: linear-gradient(135deg, rgba(13, 31, 78, 0.97) 0%, rgba(26, 51, 110, 0.95) 100%);
-      padding: 14px 24px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 16px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      box-shadow: 0 10px 34px rgba(0, 0, 0, 0.16);
+      gap: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .header-brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       text-align: right;
       min-width: 0;
-      flex: 1 1 320px;
-      justify-content: flex-start;
     }
 
     .header-logo {
-      width: 54px;
-      height: 54px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.12);
-      padding: 7px;
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 6px;
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all 0.3s ease;
       flex-shrink: 0;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
     }
 
     .header-logo:hover {
@@ -132,22 +128,20 @@
     .header-text {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 4px;
       min-width: 0;
-      text-align: right;
-      align-items: flex-start;
     }
 
     .header-title {
-      font-size: 17px;
-      font-weight: 800;
+      font-size: 15px;
+      font-weight: 700;
       color: #fff;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     .header-subtitle {
       font-size: 12px;
-      color: rgba(255, 255, 255, 0.76);
+      color: rgba(255, 255, 255, 0.72);
       line-height: 1.5;
     }
 
@@ -174,11 +168,10 @@
     }
 
     .header-btn {
-      padding: 11px 20px;
+      padding: 10px 24px;
       font-size: 14px;
       white-space: nowrap;
       flex-shrink: 0;
-      min-height: 46px;
     }
 
     .header-btn:hover,
@@ -190,10 +183,29 @@
 
     .hero {
       background: linear-gradient(160deg, var(--navy) 0%, #1c3a6e 50%, #27508a 100%);
-      padding: 100px 24px 120px;
+      padding: 44px 24px 120px;
       text-align: center;
       position: relative;
       overflow: hidden;
+    }
+
+    .hero-visual {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      margin: 0 auto 34px;
+      border-radius: 34px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 24px 60px rgba(5, 15, 40, 0.28);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-visual img {
+      width: 100%;
+      aspect-ratio: 16 / 8.2;
+      object-fit: cover;
+      object-position: center;
     }
 
     .hero::before {
@@ -893,31 +905,36 @@
     @media (max-width: 768px) {
       .site-header {
         padding: 12px 16px;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: stretch;
         gap: 12px;
       }
 
       .header-brand {
-        justify-content: flex-start;
-        text-align: right;
-        flex: 1 1 auto;
+        justify-content: center;
+        text-align: center;
       }
 
       .header-text {
-        text-align: right;
-        align-items: flex-start;
+        text-align: center;
       }
 
       .header-btn {
-        width: auto;
-        min-height: 46px;
-        padding: 10px 16px;
+        width: 100%;
+        min-height: 50px;
       }
 
       .hero {
-        padding: 60px 16px 82px;
+        padding: 28px 16px 82px;
+      }
+
+      .hero-visual {
+        margin-bottom: 24px;
+        border-radius: 24px;
+      }
+
+      .hero-visual img {
+        aspect-ratio: 16 / 10.5;
       }
 
       .hero-badge {
@@ -1026,19 +1043,6 @@
     }
 
     @media (max-width: 480px) {
-      .site-header {
-        padding: 10px 12px;
-      }
-
-      .header-logo {
-        width: 44px;
-        height: 44px;
-      }
-
-      .header-title {
-        font-size: 13px;
-      }
-
       .hero {
         padding: 50px 12px 60px;
       }
@@ -1137,7 +1141,11 @@
   </header>
 
   <section class="hero">
+    <div class="hero-visual">
+      <img src="hero-school.jpg" alt="واجهة مدارس الملك عبدالعزيز النموذجية الأهلية" />
+    </div>
     <div class="hero-content">
+      <div class="hero-badge">دليل خطوة بخطوة</div>
       <h1>كيف يمكنني تسجيل ابني في منصة مدارس؟</h1>
       <p>استعرض الخطوات بشكل تفاعلي، تنقّل بينها بسهولة، وتعرّف على المطلوب في كل مرحلة حتى تكتمل عملية التسجيل بوضوح وسلاسة.</p>
     </div>
@@ -1450,3 +1458,4 @@
   </script>
 </body>
 </html>
+
